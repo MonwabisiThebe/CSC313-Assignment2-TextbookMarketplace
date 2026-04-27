@@ -9,12 +9,15 @@
         android:id="@+id/etTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:hint="Book Title" />
+
 
     <EditText
         android:id="@+id/etSeller"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:hint="Seller Name" />
 
     <EditText
@@ -22,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Number of Copies"
+        android:layout_marginBottom="8dp"
         android:inputType="number" />
 
     <EditText
@@ -29,30 +33,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Price"
+        android:layout_marginBottom="8dp"
         android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/etBanking"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:hint="Banking Info" />
 
     <Button
         android:id="@+id/btnAddBook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Add Textbook" />
 
     <Button
         android:id="@+id/btnViewBooks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="View All Books" />
 
     <Button
         android:id="@+id/btnSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Search Books" />
 
 </LinearLayout>

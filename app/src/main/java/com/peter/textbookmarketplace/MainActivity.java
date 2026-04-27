@@ -1,5 +1,6 @@
 package com.peter.textbookmarketplace;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,9 +46,19 @@ public class MainActivity extends AppCompatActivity {
             try {
                 String title = etTitle.getText().toString();
                 String seller = etSeller.getText().toString();
-                int copies = Integer.parseInt(etCopies.getText().toString());
-                double price = Double.parseDouble(etPrice.getText().toString());
+                String copiesStr = etCopies.getText().toString();
+                String priceStr = etPrice.getText().toString();
                 String banking = etBanking.getText().toString();
+
+                if (title.isEmpty() || seller.isEmpty() || copiesStr.isEmpty()
+                        || priceStr.isEmpty() || banking.isEmpty()) {
+
+                    Toast.makeText(this, "Please fill all fields!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                int copies = Integer.parseInt(copiesStr);
+                double price = Double.parseDouble(priceStr);
 
                 Textbook book = new Textbook(title, seller, copies, price, banking);
 
@@ -66,34 +77,45 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
 
             } catch (Exception e) {
-                Toast.makeText(this, "Please fill all fields correctly!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Invalid input format!", Toast.LENGTH_SHORT).show();
             }
         });
 
         // VIEW BOOKS
         btnViewBooks.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, ViewBooksActivity.class));
+        });
 
-            List<Textbook> books = repository.getAllBooks();
+        // SEARCH
+        btnSearch.setOnClickListener(v -> {
 
-            if (books.isEmpty()) {
-                Toast.makeText(this, "No books available", Toast.LENGTH_SHORT).show();
+            String title = etTitle.getText().toString();
+            String seller = etSeller.getText().toString();
+
+            List<Textbook> results;
+
+            if (!title.isEmpty()) {
+                results = repository.searchByTitle(title);
+            } else if (!seller.isEmpty()) {
+                results = repository.searchBySeller(seller);
+            } else {
+                Toast.makeText(this, "Enter title or seller to search", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (results.isEmpty()) {
+                Toast.makeText(this, "No matching books found", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             StringBuilder builder = new StringBuilder();
+            builder.append("SEARCH RESULTS\n\n");
 
-            for (Textbook b : books) {
-                builder.append("Title: ").append(b.getTitle()).append("\n");
-                builder.append("Seller: ").append(b.getSellerName()).append("\n");
-                builder.append("Price: ").append(b.getPrice()).append("\n\n");
+            for (Textbook b : results) {
+                builder.append(" ").append(b.getTitle()).append("\n");
+                builder.append(" ").append(b.getSellerName()).append("\n");
+                builder.append(" R").append(b.getPrice()).append("\n\n");
             }
-
-            Toast.makeText(this, builder.toString(), Toast.LENGTH_LONG).show();
-        });
-
-        // SEARCH (we’ll complete this next)
-        btnSearch.setOnClickListener(v -> {
-            Toast.makeText(this, "Search feature coming next", Toast.LENGTH_SHORT).show();
         });
     }
 }

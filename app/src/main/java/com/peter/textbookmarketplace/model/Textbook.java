@@ -7,6 +7,7 @@ public class Textbook {
     private int copies;
     private double price;
     private String bankInfo;
+    private String bankingInfo;
 
     public Textbook(String title, String sellerName, int copies, double price, String bankInfo) {
         this.title = title;
@@ -14,6 +15,7 @@ public class Textbook {
         this.copies = copies;
         this.price = price;
         this.bankInfo = bankInfo;
+        this.bankingInfo = bankingInfo;
     }
 
     public String getTitle() { return title; }
@@ -21,4 +23,7 @@ public class Textbook {
     public int getCopies() { return copies; }
     public double getPrice() { return price; }
     public String getBankInfo() { return bankInfo; }
+    public String getBankingInfo() {
+        return bankingInfo;
+    }
 }

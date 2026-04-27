@@ -1,59 +1,51 @@
 package com.peter.textbookmarketplace.repository;
 
-import com.peter.textbookmarketplace.exception.DuplicateBookException;
 import com.peter.textbookmarketplace.model.Textbook;
-import com.peter.textbookmarketplace.service.BookService;
+import com.peter.textbookmarketplace.exception.DuplicateBookException;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookRepository implements BookService {
+public class BookRepository {
 
-    private List<Textbook> books = new ArrayList<>();
+    // 🔥 STATIC = shared across all activities
+    private static List<Textbook> books = new ArrayList<>();
 
-    @Override
     public void addBook(Textbook book) throws DuplicateBookException {
 
         for (Textbook b : books) {
             if (b.getTitle().equalsIgnoreCase(book.getTitle())
                     && b.getSellerName().equalsIgnoreCase(book.getSellerName())) {
-                throw new DuplicateBookException("This textbook already exists for this seller!");
+                throw new DuplicateBookException("This textbook already exists...");
             }
         }
 
         books.add(book);
     }
 
-    @Override
     public List<Textbook> getAllBooks() {
         return books;
     }
 
-    @Override
     public List<Textbook> searchByTitle(String title) {
-
-        List<Textbook> result = new ArrayList<>();
+        List<Textbook> results = new ArrayList<>();
 
         for (Textbook b : books) {
             if (b.getTitle().toLowerCase().contains(title.toLowerCase())) {
-                result.add(b);
+                results.add(b);
             }
         }
-
-        return result;
+        return results;
     }
 
-    @Override
-    public List<Textbook> searchBySeller(String sellerName) {
-
-        List<Textbook> result = new ArrayList<>();
+    public List<Textbook> searchBySeller(String seller) {
+        List<Textbook> results = new ArrayList<>();
 
         for (Textbook b : books) {
-            if (b.getSellerName().toLowerCase().contains(sellerName.toLowerCase())) {
-                result.add(b);
+            if (b.getSellerName().toLowerCase().contains(seller.toLowerCase())) {
+                results.add(b);
             }
         }
-
-        return result;
+        return results;
     }
 }
