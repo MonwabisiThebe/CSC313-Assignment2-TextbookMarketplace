@@ -26,7 +26,7 @@ public class ViewBooksActivity extends AppCompatActivity {
         List<Textbook> books = repository.getAllBooks();
 
         if (books == null || books.isEmpty()) {
-            tvBooks.setText("No books available");
+            tvBooks.setText("No textbooks available yet.\nAdd your first listing!");
             return;
         }
 
@@ -36,7 +36,7 @@ public class ViewBooksActivity extends AppCompatActivity {
             builder.append(" Title: ").append(b.getTitle()).append("\n");
             builder.append(" Seller: ").append(b.getSellerName()).append("\n");
             builder.append(" Copies: ").append(b.getCopies()).append("\n");
-            builder.append(" Price: ZAR").append(b.getPrice()).append("\n");
+            builder.append(" Price: ZAR ").append(b.getPrice()).append("\n");
             builder.append(" Banking: ").append(b.getBankingInfo()).append("\n");
             builder.append("----------------------\n\n");
         }

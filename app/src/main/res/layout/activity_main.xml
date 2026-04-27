@@ -3,65 +3,101 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#F5F5F5">
 
+    <!-- APP TITLE -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📚 Textbook Marketplace"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#222222"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="12dp" />
+
+    <!-- TITLE INPUT -->
     <EditText
         android:id="@+id/etTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:hint="Book Title" />
+        android:hint="Book Title"
+        android:layout_marginBottom="10dp"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp" />
 
-
+    <!-- SELLER INPUT -->
     <EditText
         android:id="@+id/etSeller"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:hint="Seller Name" />
+        android:hint="Seller Name"
+        android:layout_marginBottom="10dp"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp" />
 
+    <!-- COPIES INPUT -->
     <EditText
         android:id="@+id/etCopies"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Number of Copies"
-        android:layout_marginBottom="8dp"
-        android:inputType="number" />
+        android:inputType="number"
+        android:layout_marginBottom="10dp"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp" />
 
+    <!-- PRICE INPUT -->
     <EditText
         android:id="@+id/etPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Price"
-        android:layout_marginBottom="8dp"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="10dp"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp" />
 
+    <!-- BANKING INPUT -->
     <EditText
         android:id="@+id/etBanking"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:hint="Banking Info" />
+        android:hint="Banking Info"
+        android:layout_marginBottom="15dp"
+        android:background="@android:drawable/edit_text"
+        android:padding="10dp" />
 
+    <!-- ADD BUTTON -->
     <Button
         android:id="@+id/btnAddBook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Add Textbook" />
+        android:text="Add Textbook"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="8dp" />
 
+    <!-- VIEW BUTTON -->
     <Button
         android:id="@+id/btnViewBooks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="View All Books" />
+        android:text="View All Books"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="10dp" />
 
+    <!-- SEARCH BUTTON -->
     <Button
         android:id="@+id/btnSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Search Books" />
+        android:text="Search Books"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="10dp" />
 
 </LinearLayout>
