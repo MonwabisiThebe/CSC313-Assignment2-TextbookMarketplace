@@ -1,26 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-android:padding="16dp">
-
-<Button
-    android:id="@+id/btnAddBook"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Add Textbook" />
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-<Button
-    android:id="@+id/btnViewBooks"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="View All Books" />
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Book Title" />
 
-<Button
-    android:id="@+id/btnSearch"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Search Books" />
+    <EditText
+        android:id="@+id/etSeller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Seller Name" />
+
+    <EditText
+        android:id="@+id/etCopies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Number of Copies"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/etPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/etBanking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Banking Info" />
+
+    <Button
+        android:id="@+id/btnAddBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Textbook" />
+
+    <Button
+        android:id="@+id/btnViewBooks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View All Books" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search Books" />
 
 </LinearLayout>
