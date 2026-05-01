@@ -8,6 +8,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TextbookMarketplace">
 
+        <activity android:name=".AddBookActivity"/>
+        <activity android:name=".SearchActivity"/>
+
         <activity
             android:name=".ViewBooksActivity"
             android:exported="false" />

@@ -21,7 +21,7 @@ public class ViewBooksActivity extends AppCompatActivity {
 
         TextView tvBooks = findViewById(R.id.tvBooks);
 
-        repository = new BookRepository();
+        repository = BookRepository.getInstance();
 
         List<Textbook> books = repository.getAllBooks();
 

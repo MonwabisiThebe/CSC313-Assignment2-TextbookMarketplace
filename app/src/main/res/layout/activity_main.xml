@@ -1,103 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#F5F5F5">
+    android:background="#000000">
 
-    <!-- APP TITLE -->
+    <!-- HEADER -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="📚 Textbook Marketplace"
-        android:textSize="24sp"
+        android:text="Textbook Marketplace"
+        android:textSize="26sp"
         android:textStyle="bold"
-        android:textColor="#222222"
+        android:background="#1E88E5"
+        android:textColor="#FFFFFF"
         android:gravity="center"
-        android:paddingTop="8dp"
-        android:paddingBottom="12dp" />
+        android:padding="20dp"/>
 
-    <!-- TITLE INPUT -->
-    <EditText
-        android:id="@+id/etTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Book Title"
-        android:layout_marginBottom="10dp"
-        android:background="@android:drawable/edit_text"
-        android:padding="10dp" />
-
-    <!-- SELLER INPUT -->
-    <EditText
-        android:id="@+id/etSeller"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Seller Name"
-        android:layout_marginBottom="10dp"
-        android:background="@android:drawable/edit_text"
-        android:padding="10dp" />
-
-    <!-- COPIES INPUT -->
-    <EditText
-        android:id="@+id/etCopies"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Number of Copies"
-        android:inputType="number"
-        android:layout_marginBottom="10dp"
-        android:background="@android:drawable/edit_text"
-        android:padding="10dp" />
-
-    <!-- PRICE INPUT -->
-    <EditText
-        android:id="@+id/etPrice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Price"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="10dp"
-        android:background="@android:drawable/edit_text"
-        android:padding="10dp" />
-
-    <!-- BANKING INPUT -->
-    <EditText
-        android:id="@+id/etBanking"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Banking Info"
-        android:layout_marginBottom="15dp"
-        android:background="@android:drawable/edit_text"
-        android:padding="10dp" />
-
-    <!-- ADD BUTTON -->
+    <!-- BUTTONS -->
     <Button
-        android:id="@+id/btnAddBook"
+        android:id="@+id/btnBrowse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Textbook"
-        android:backgroundTint="#4CAF50"
+        android:text="Browse Books"
         android:textColor="#FFFFFF"
-        android:layout_marginTop="8dp" />
+        android:backgroundTint="#7E57C2"
+        android:layout_margin="16dp"/>
 
-    <!-- VIEW BUTTON -->
     <Button
-        android:id="@+id/btnViewBooks"
+        android:id="@+id/btnAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View All Books"
-        android:backgroundTint="#4CAF50"
+        android:text="List Textbook"
         android:textColor="#FFFFFF"
-        android:layout_marginTop="10dp" />
+        android:backgroundTint="#7E57C2"
+        android:layout_margin="16dp"/>
 
-    <!-- SEARCH BUTTON -->
     <Button
         android:id="@+id/btnSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Search Books"
-        android:backgroundTint="#4CAF50"
         android:textColor="#FFFFFF"
-        android:layout_marginTop="10dp" />
+        android:backgroundTint="#7E57C2"
+        android:layout_margin="16dp"/>
 
 </LinearLayout>

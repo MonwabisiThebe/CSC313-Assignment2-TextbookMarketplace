@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:textColor="#FFFFFF">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="List a Textbook"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:paddingBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Book Title"/>
+
+        <EditText
+            android:id="@+id/etSeller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Seller Name"/>
+
+        <EditText
+            android:id="@+id/etCopies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Copies"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/etPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Price"
+            android:inputType="numberDecimal"/>
+
+        <EditText
+            android:id="@+id/etBanking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Banking Info"/>
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Listing"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
