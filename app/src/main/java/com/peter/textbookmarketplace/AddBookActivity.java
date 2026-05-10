@@ -31,24 +31,61 @@ public class AddBookActivity extends AppCompatActivity {
         Button btnSubmit = findViewById(R.id.btnSubmit);
 
         btnSubmit.setOnClickListener(v -> {
-            try {
-                String title = etTitle.getText().toString();
-                String seller = etSeller.getText().toString();
-                int copies = Integer.parseInt(etCopies.getText().toString());
-                double price = Double.parseDouble(etPrice.getText().toString());
-                String banking = etBanking.getText().toString();
 
-                Textbook book = new Textbook(title, seller, copies, price, banking);
+            try {
+
+                String title = etTitle.getText().toString().trim();
+                String seller = etSeller.getText().toString().trim();
+                String copiesStr = etCopies.getText().toString().trim();
+                String priceStr = etPrice.getText().toString().trim();
+                String banking = etBanking.getText().toString().trim();
+
+                if (title.isEmpty() || seller.isEmpty()
+                        || copiesStr.isEmpty()
+                        || priceStr.isEmpty()
+                        || banking.isEmpty()) {
+
+                    Toast.makeText(this,
+                            "Please fill all fields",
+                            Toast.LENGTH_SHORT).show();
+
+                    return;
+                }
+
+                int copies = Integer.parseInt(copiesStr);
+                double price = Double.parseDouble(priceStr);
+
+                Textbook book = new Textbook(
+                        title,
+                        seller,
+                        copies,
+                        price,
+                        banking
+                );
 
                 repository.addBook(book);
 
-                Toast.makeText(this, "Book added!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,
+                        "Book added successfully!",
+                        Toast.LENGTH_SHORT).show();
+
+                etTitle.setText("");
+                etSeller.setText("");
+                etCopies.setText("");
+                etPrice.setText("");
+                etBanking.setText("");
 
             } catch (DuplicateBookException e) {
-                Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(this,
+                        e.getMessage(),
+                        Toast.LENGTH_SHORT).show();
+
             } catch (Exception e) {
-                Toast.makeText(this, "Invalid input!", Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(this,
+                        "Invalid input!",
+                        Toast.LENGTH_SHORT).show();
             }
-        });
-    }
+        });    }
 }
